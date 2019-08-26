@@ -1,0 +1,60 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="width: 45%; float:left">
+
+  <p>Recent Key is {{op?.recentKey}}</p>
+
+
+  <!--<button (click)="op.ListPush()">List Push</button>
+  <br> <br>-->
+  <button (click)="op.ListRemove()">List Remove</button>
+  <br> <br>
+  <button (click)="op.ListUpdate()">List Update</button>
+  <br> <br>
+  <!--<button (click)="op.ObjUpdate()">Object update</button>
+  <br> <br>
+  <button (click)="op.ObjSet()">Object Set</button>
+  <br> <br>
+  <button (click)="op.ObjRemove()">Object Remove</button>-->
+
+
+  <ul>
+    <li *ngFor="let item of op.courses" style="margin-top: 20px">
+      {{item.key}} =>  {{item.description}}
+      <ul>
+        <li *ngFor="let img of item.imgs">
+          <img src="{{img}}" width="60" height="70" alt="">
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+<div style="width: 45%; margin-top: 20px;float:left">
+  <p [style.color]="authSuccess?'green':'red'">{{message}}</p>
+  <form autocomplete="on" novalidate [formGroup]="form">
+    <div>
+      <label for="">Email </label>
+      <input type="text" formControlName="email" required>
+    </div>
+
+    <div style="margin-top: 10px">
+      <label for="">Password </label>
+      <input type="password" formControlName="password" required>
+    </div>
+
+    <button style="margin-top: 40px;margin-right: 20px" (click)="LoginSubmt()">Login</button>
+    <button style="margin-top: 40px" (click)="registerSubmt()">Register</button>
+
+  </form>
+
+  <hr>
+  <br><br>
+  <div>
+    <!--    <p>URL : {{storageURL}}</p>-->
+    <!--    <p>{{percentage}}%</p>-->
+    <input type="file" multiple accept="image/*" (change)="onFileInput($event)"><br>
+    <button style="margin-top: 40px" (click)="submit()">Upload</button>
+  </div>
+
+</div>

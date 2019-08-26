@@ -1,0 +1,8 @@
+ul li{
+  display: inline-block;
+}
+
+ul li li{
+  margin: 10px;
+  box-shadow: 1px 1px 4px grey;
+}
